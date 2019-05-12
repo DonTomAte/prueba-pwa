@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>de</title>
+    <meta name="theme-color" content="#4b0082">
+    <meta name="MobileOptimized" content="Width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" href="./images/ProgramadorFitness.png">
+    <link rel="apple-touch-icon" href="./images/ProgramadorFitness.png">
+    <link rel="apple-touch-startup-image" href="./images/ProgramadorFitness.png">
+    <link rel="manifest" href="./manifest.json">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-content>
+                <v-toolbar dark>
+                    <v-toolbar-side-icon></v-toolbar-side-icon>
+                    <v-toolbar-title>DonEber</v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    <v-btn icon>
+                        <v-icon>search</v-icon>
+                    </v-btn>
+                    <v-btn icon>
+                        <v-icon>favorite</v-icon>
+                    </v-btn>
+                    <v-btn icon>
+                        <v-icon>more_vert</v-icon>
+                    </v-btn>
+                </v-toolbar>
+                <v-container grid-list-xl>
+                    <v-layout row wrap>
+                        <v-flex xs12 sm6 md4 v-for="i in 6">
+                            <v-card>
+                                <v-card-title>
+                                    Mire
+                                </v-card-title>
+                                <v-card-text>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam debitis vero quos numquam veritatis libero iusto ullam ipsam saepe explicabo eligendi quia harum esse doloremque, ea tenetur doloribus earum eaque.
+                                </v-card-text>
+                            </v-card>
+                        </v-flex>
+                    </v-layout>
+                </v-container>
+            </v-content>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+            }
+        })
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
