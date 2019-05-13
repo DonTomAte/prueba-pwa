@@ -1,6 +1,6 @@
 {
-    "name":"#donEber",
-    "short_name":"#dnEbr",
+    "name":"Mis Tareas",
+    "short_name":"Tareas U",
     "description":"Esto es una prueba, intentamos crear una PWA",
     "background_color":"#4b0082",
     "theme_color":"#F0DB4F",

@@ -21,8 +21,8 @@
     <div id="app">
         <v-app>
             <v-content>
-                <v-toolbar dark>
-                    <v-toolbar-side-icon></v-toolbar-side-icon>
+                <v-toolbar dark app>
+                    <v-toolbar-side-icon @click="drawer=!drawer"></v-toolbar-side-icon>
                     <v-toolbar-title>DonEber</v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-btn icon>
@@ -35,34 +35,51 @@
                         <v-icon>more_vert</v-icon>
                     </v-btn>
                 </v-toolbar>
+
                 <v-container grid-list-xl>
                     <v-layout row wrap>
-                        <v-flex xs12 sm6 md4 v-for="i in 6">
-                            <v-card>
-                                <v-card-title>
-                                    Mire
+                        <v-flex>
+                            <v-text-field
+                                v-model="nuevaTarea"
+                                label="Nueva tarea"
+                                required
+                            ></v-text-field>
+                        </v-flex>
+                        <v-flex>
+                            <v-btn @click="agregarTarea" seccondary >Agregar</v-btn>
+                        </v-flex>
+                    </v-layout>
+                    <v-layout row wrap>
+                        <v-flex xs12 sm6 md4 v-for="(tarea,i) in tareas" :key="i">
+                            <v-card >
+                                <v-card-title class="indigo">
+                                    Tarea {{ i +1}}
+                                    <v-spacer></v-spacer>
+                                    <v-btn @click="editarTarea" flat icon color="green">
+                                        <v-icon>check</v-icon>
+                                    </v-btn>
+                                    <v-btn @click="editarTarea" flat icon color="pink">
+                                        <v-icon>delete</v-icon>
+                                    </v-btn>
                                 </v-card-title>
                                 <v-card-text>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam debitis vero quos numquam veritatis libero iusto ullam ipsam saepe explicabo eligendi quia harum esse doloremque, ea tenetur doloribus earum eaque.
+                                        {{tarea.nombre}}
                                 </v-card-text>
                             </v-card>
                         </v-flex>
                     </v-layout>
                 </v-container>
+                <v-navigation-drawer app v-model="drawer" primary temporary>
+                    <h1>Menu Vertical</h1>
+                    <h3 v-for="(tarea,i) in tareas">{{tarea.nombre}}</h3>    
+                </v-navigation-drawer>
             </v-content>
         </v-app>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
-    <script>
-        new Vue({
-            el: '#app',
-            data: {
-            }
-        })
-    </script>
     <script src="./script.js"></script>
+    <script src="./miJs.js"></script>
 </body>
 
 </html>
